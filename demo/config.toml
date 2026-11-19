@@ -1,0 +1,17 @@
+[[dispositivo]]
+nome = "workstation"
+destino = "local"
+tipo = "demo"
+
+[[dispositivo]]
+nome = "homelab"
+destino = "local"
+tipo = "demo"
+
+[[dispositivo]]
+nome = "nas"
+destino = "local"
+tipo = "demo"
+
+[claude]
+descobrir = false

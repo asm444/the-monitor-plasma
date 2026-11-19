@@ -1,0 +1,14 @@
+[Unit]
+Description=The Monitor collector: usage, sessions and stats of the local Claude accounts
+After=network-online.target
+
+[Service]
+ExecStart=/usr/bin/python3 -I %h/.local/share/the-monitor/coletor.py
+Restart=always
+RestartSec=15
+UMask=0077
+NoNewPrivileges=yes
+Slice=background.slice
+
+[Install]
+WantedBy=default.target

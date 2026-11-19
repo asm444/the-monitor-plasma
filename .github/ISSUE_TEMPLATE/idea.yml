@@ -1,0 +1,14 @@
+name: Idea or feature request
+description: Suggest a device type, a provider, a view, or anything else
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like The Monitor to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why is it useful to you?

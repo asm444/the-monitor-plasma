@@ -1,0 +1,31 @@
+# ~/.config/the-monitor/config.toml
+# The hub reloads it on save; the collector rereads it every 5 s.
+
+# One table per machine. destino: "local", an alias from ~/.ssh/config, or user@host.
+# tipo picks agentes/<tipo>.py, the program that runs on the target and prints one JSON line per second.
+[[dispositivo]]
+nome = "desktop"
+destino = "local"
+
+# [[dispositivo]]
+# nome = "server"
+# destino = "server"
+# tipo = "linux"
+
+# Claude accounts: ~/.claude and every ~/.claude-<name> holding .credentials.json are picked up automatically.
+# To add one: CLAUDE_CONFIG_DIR=~/.claude-work claude, then log in.
+[claude]
+descobrir = true
+# Push the collected usage to the machines that display the widget (optional).
+# enviar_para = ["server"]
+
+# Override name, colour (palette index) or the command suggested when the token expires.
+# [[claude.conta]]
+# dir = "~/.claude"
+# nome = "personal"
+# cor = 1
+
+# Hide a discovered account.
+# [[claude.conta]]
+# dir = "~/.claude-old"
+# ignorar = true

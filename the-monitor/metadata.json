@@ -1,0 +1,15 @@
+{
+    "KPlugin": {
+        "Id": "org.asm.themonitor",
+        "Name": "The Monitor",
+        "Description": "btop-style resources of several machines in tabs, plus usage of several Claude accounts",
+        "Category": "System Information",
+        "Icon": "utilities-system-monitor",
+        "Authors": [{ "Name": "asm444" }],
+        "License": "MIT",
+        "Website": "https://github.com/asm444/the-monitor-plasma",
+        "Version": "1.0.0"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}
