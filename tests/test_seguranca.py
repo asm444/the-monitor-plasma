@@ -161,10 +161,13 @@ class Hub(unittest.TestCase):
 
     def test_recusa_amostra_aninhada_que_derrubaria_a_escrita(self):
         m = hub.Maquina(config.Dispositivo("x", "local", "linux"))
-        linha = ('{"mem":{"usada":1,"total":2,"swapUsada":0,"swapTotal":0},"cpu":{"pct":1,"nucleos":[]},'
-                 '"discos":[],"rede":{"ifaces":[]},"x":' + "[" * 2900 + "]" * 2900 + "}")
+        fundo = []
+        for _ in range(2900):
+            fundo = [fundo]
+        amostra = {"mem": {"usada": 1, "total": 2, "swapUsada": 0, "swapTotal": 0}, "cpu": {"pct": 1, "nucleos": []},
+                   "discos": [], "rede": {"ifaces": []}, "x": fundo}
         with self.assertRaises(ValueError):
-            m.registrar(json.loads(linha))
+            m.registrar(amostra)
         self.assertIsNone(m.dado)
         with tempfile.TemporaryDirectory() as tmp:
             arq = Path(tmp) / "local.json"
